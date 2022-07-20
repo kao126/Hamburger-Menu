@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+main {
+    width: 700px;
+    margin: 0 auto;
+    /* flex: 1; */
+
+}
+
+aside {
+    width: 20%;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    height: 40px;
+}
+
+div {
+    margin-top: auto;
+    height: 200px;
+}
+
+
+.open,
+.close {
+    display: none;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    left: -50vw;
+}
+
+@media screen and (max-width: 850px) {
+    main {
+        width: 100%;
+        padding-top: 30px;
+    }
+
+    .open,
+    .close {
+        display: block;
+    }
+
+    .open {
+        position: absolute;
+    }
+
+    aside {
+        position: absolute;
+        left: -180px;
+        height: 100%;
+        transition: all 0.2s;
+        background: white;
+    }
+    input[type="checkbox"]:checked ~ aside {
+        left: 0;
+    }
+    input[type="checkbox"]:checked ~ .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 0, 0, 0.8) !important;
+    }
+}
